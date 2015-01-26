@@ -73,7 +73,8 @@ public class JdbcTest {
             int into_2_1=sc.nextInt();
             System.out.println("请输入答案");
             String into_2_2=sc.next();
-            HomeworkDao.insertInfo_homework(id, into_2_2, into_2_1);
+            HomeworkDao.insertInfo_homework( into_2_1,into_2_2,id);
+            System.out.println("提交成功");
             intoMethod_2_1(sc,id);
         }else if (into_2==2){
             HomeworkDao.searchByOwner(id);
@@ -88,7 +89,7 @@ public class JdbcTest {
     }
 
     private static void intoMethod_1(Scanner sc) {
-        System.out.println("请选择服务项目："+"\n\t"+"1.查看所有学生名单。"+"\n\t"
+        System.out.println("请选择服务项目："+"\n\t"+"1.查看学生名单。"+"\n\t"
         +"2.查看未被批改作业的学生。"+"\n\t"+"0.返回。");
         int into_1  = sc.nextInt();
         if (into_1==1){
